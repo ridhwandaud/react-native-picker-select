@@ -413,11 +413,11 @@ export default class RNPickerSelect extends PureComponent {
     }
 
     renderIOS() {
-        const { style, modalProps, pickerProps, touchableWrapperProps } = this.props;
+        const { style, modalProps, pickerProps, touchableWrapperProps, containerStyle } = this.props;
         const { animationType, orientation, selectedItem, showPicker } = this.state;
 
         return (
-            <View style={[defaultStyles.viewContainer, style.viewContainer]}>
+            <View style={[defaultStyles.viewContainer, containerStyle]}>
                 <TouchableOpacity
                     testID="ios_touchable_wrapper"
                     onPress={() => {
