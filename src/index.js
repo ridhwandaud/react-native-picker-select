@@ -380,15 +380,12 @@ export default class RNPickerSelect extends PureComponent {
     }
 
     renderTextInputOrChildren() {
-        const { children, style, textInputProps } = this.props;
+        const { children, style, textInputProps, inputContainerStyle } = this.props;
         const { selectedItem } = this.state;
-
-        const containerStyle =
-            Platform.OS === 'ios' ? style.inputIOSContainer : style.inputAndroidContainer;
 
         if (children) {
             return (
-                <View pointerEvents="box-only" style={containerStyle}>
+                <View pointerEvents="box-only" style={inputContainerStyle}>
                     {children}
                 </View>
             );
